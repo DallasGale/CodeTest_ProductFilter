@@ -1,0 +1,143 @@
+.typography {
+  &__color {
+    &--brand {
+      color: $red;
+    }
+  }
+
+  &__heading {
+    &--one {
+      font-size: rem(100);
+      line-height: rem(80);
+      letter-spacing: rem(-2);
+      margin-bottom: rem(60);
+
+      @include respond-to("desktop-down") {
+        font-size: rem(80);
+        line-height: rem(60);
+        margin-bottom: rem(40);
+      }
+
+      @include respond-to("tablet-landscape-down") {
+        font-size: rem(60);
+      }
+
+      @include respond-to("phone-down") {
+        font-size: rem(60);
+        line-height: rem(50);
+        letter-spacing: rem(-1);
+      }
+
+      @include respond-to("small-device-down") {
+        font-size: rem(50);
+        line-height: rem(40);
+      }
+    }
+
+    &--three {
+      color: $red;
+      display: block;
+      font-weight: 600;
+      font-size: rem(40);
+      line-height: rem(30);
+      letter-spacing: rem(-2);
+      margin-bottom: rem(10);
+      margin-top: rem(20);
+
+      @include respond-to("desktop-down") {
+        font-size: rem(30);
+        letter-spacing: rem(-1);
+        margin-bottom: rem(2);
+        margin-top: rem(10);
+      }
+    }
+
+    &--four {
+      display: block;
+      font-weight: 400;
+      font-size: rem(24);
+      letter-spacing: rem(-0.5);
+      margin-bottom: rem(20);
+      margin-top: 0;
+
+      @include respond-to("desktop-down") {
+        font-size: rem(16);
+      }
+    }
+
+    &--five {
+      font-weight: 600;
+      font-size: rem(20);
+      letter-spacing: rem(-0.5);
+      margin-bottom: 0;
+      margin-top: 0;
+
+      @include respond-to("desktop-down") {
+        font-size: rem(16);
+      }
+    }
+
+    &--six {
+      font-weight: 400;
+      font-size: rem(16);
+      letter-spacing: rem(-0.5);
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+  }
+
+  &__paragraph {
+    font-size: rem(14);
+    line-height: rem(18);
+    margin-top: rem(60);
+
+    &--hero {
+      font-size: rem(40);
+      font-weight: 100;
+      line-height: rem(50);
+      margin-top: rem(10);
+      padding-right: rem(600);
+
+      @include respond-to("widescreen-down") {
+        padding-right: rem(320);
+        font-size: rem(25);
+        line-height: rem(37);
+      }
+
+      @include respond-to("tablet-landscape-down") {
+        padding-right: rem(0);
+      }
+
+      @include respond-to("tablet-down") {
+        padding-right: rem(300);
+      }
+
+      @include respond-to("phone-down") {
+        padding-right: 0;
+        font-size: rem(23);
+        line-height: rem(35);
+      }
+
+      @include respond-to("small-device-down") {
+        // font-size: rem();
+        // line-height: rem(30);
+      }
+    }
+  }
+
+  &__list {
+    &--title {
+      font-size: rem(16);
+    }
+    &--items {
+      font-size: rem(16);
+      line-height: rem(20);
+
+      @include respond-to("small-device-down") {
+        line-height: rem(18);
+        margin-bottom: rem(12);
+        
+      }
+    }
+  }
+}

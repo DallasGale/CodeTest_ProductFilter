@@ -1,0 +1,5 @@
+@mixin shadow_grey_6px {
+  -webkit-box-shadow: inset 0px 0px 0px 6px $gray_dark;
+  -moz-box-shadow: inset 0px 0px 0px 6px $gray_dark;
+  box-shadow: inset 0px 0px 0px 6px $gray_dark;
+}

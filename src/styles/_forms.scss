@@ -1,0 +1,43 @@
+.forms {
+  &__form {
+    position: relative;
+    display: block;
+    padding-bottom: rem(60);
+  }
+
+  &__grid {
+    &--get-in-touch {
+      display: grid;
+      grid-template-columns: 20% 80%;
+      align-items: center;
+    }
+  }
+  &__input {  
+    background: #2c2c2c;
+    border: none;
+    color: $white;
+    width: 100%;
+    padding: rem(15);
+    margin-top: rem(10);
+
+    @include respond-to("desktop-down") {
+      padding: rem(10);
+    }
+  }
+
+  &__label {
+    display: block;
+    font-size: rem(15);
+    margin-top: rem(20);
+    padding-right: rem(5);
+  }
+
+  &__textarea {
+    background: #2c2c2c;
+    color: $white;
+    width: 100%;
+    padding: rem(10);
+    margin-top: rem(10);
+    margin-bottom: rem(10);
+  }
+}

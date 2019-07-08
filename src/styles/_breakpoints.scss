@@ -1,0 +1,57 @@
+@mixin respond-to($breakpoint) {
+   @if $breakpoint == "phone-down" {
+      @media (max-width: 768px) {
+         @content;
+      } 
+   }
+
+   @if $breakpoint == "small-device-down" {
+      @media (max-width: 420px) {
+         @content;
+      }
+   }
+
+   @if $breakpoint == "tablet-down" {
+      @media (max-width: 1048px) {
+         @content;
+      }
+   }
+
+   @if $breakpoint == "tablet-landscape-down" {
+      @media (max-width: 1366px) {
+         @content;
+      }
+   }
+
+   @if $breakpoint == "desktop-down" {
+      @media (max-width: 1449px) {
+         @content;
+      }
+   }
+
+   @if $breakpoint == "widescreen-down" {
+      @media (max-width: 1999px) {
+         @content;
+      }
+   }
+   @else if $breakpoint == "phone-up" {
+      @media (min-width: 769px) {
+         @content;
+      }
+   }
+   @else if $breakpoint == "tablet-up" {
+      @media (min-width: 1049px) {
+         @content;
+      }
+   }
+   @else if $breakpoint == "desktop-up" {
+      @media (min-width: 1450px) {
+         @content;
+      }
+   }
+   @else if $breakpoint == "widescreen-up" {
+      @media (min-width: 2000px) {
+         @content;
+      }
+   }
+}
