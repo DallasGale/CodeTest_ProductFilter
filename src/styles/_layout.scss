@@ -1,23 +1,17 @@
 $base_size: 16; // Default
 
-@function rem($target, $context: $base_size) {
-  @return ($target / $context) * 1rem;
-}
-
-@font-face {
-  font-family: neuzeit-grotesk;
-  font-display: swap;
-  src: local(neuzeit-grotesk);
+@function em($target, $context: $base_size) {
+  @return ($target / $context) * 1em;
 }
 
 html {
-  font-family: neuzeit-grotesk, helvetica, arial, sans-serif;
+  font-family: helvetica, arial, sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
 body {
-  background: $faded_black;
-  color: $white;
+  background: $white;
+  color: $black;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -63,7 +57,7 @@ a {
   -webkit-text-decoration-skip: objects;
 
   &:focus {
-    outline-color: $red;
+    outline-color: $focus;
   }
 }
 a:active,
@@ -133,7 +127,7 @@ textarea {
   margin: 0;
 
   &:focus {
-    outline-color: $red;
+    outline-color: $focus;
   }
 }
 optgroup {
@@ -208,7 +202,7 @@ textarea {
   font: inherit;
 }
 html {
-  font: 112.5%/1.45em neuzeit-grotesk, sans-serif;
+  font: 112.5%/1.45em helvetica, arial, sans-serif;
   box-sizing: border-box;
   overflow-y: scroll;
 }
@@ -222,7 +216,7 @@ html {
   box-sizing: inherit;
 }
 body {
-  font-family: neuzeit-grotesk, sans-serif;
+  font-family: helvetica, arial, sans-serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -372,7 +366,7 @@ form {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 0;
 }
 noscript {
   margin-left: 0;

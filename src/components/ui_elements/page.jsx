@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
 import styled from 'styled-components'
@@ -7,11 +7,10 @@ import { pageLoadContentAppear } from '../utils/transitions'
 import pxToRem from '../utils/px_to_rem'
 import { ScreenTabletLandscapeDown, ScreenSmallDeviceDown } from '../utils/media'
 
-import ContentWrapper from './content_wrapper'
+import ContentWrapper from '../styled/content_wrapper'
 
 
-const StyledPage = styled.div`
-
+const StyledPage = styled.main`
   opacity: 0;
   background: 'transparent';
   animation: ${pageLoadContentAppear} 0.5s ease forwards;
@@ -20,7 +19,7 @@ const StyledPage = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  max-width: '1850px';
+  max-width: 1340px;
   margin: 0 auto;
   z-index: 2;
 
@@ -36,7 +35,7 @@ const StyledPage = styled.div`
 `
 
 const Page = (props) => {
-  const { children, fullWidth } = props
+  const { children } = props
 
   const [mounting, setMounting] = useState()
 
@@ -45,7 +44,7 @@ const Page = (props) => {
   }, [])
 
   return (
-    <StyledPage isMounting={mounting} fullWidth={fullWidth}>
+    <StyledPage isMounting={mounting}>
       <ContentWrapper>
         {children}
       </ContentWrapper>
