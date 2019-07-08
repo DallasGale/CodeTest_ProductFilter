@@ -70,7 +70,7 @@ class Products extends React.Component {
 
     // Show full list of products when the 'select' label is chosen.
     // Could also be used for a 'view all' option.
-    if (e.target.value === productSizeFilterLabel) {
+    if (value === productSizeFilterLabel) {
       this.setState({
         filteredProducts: allProducts,
         filterSelected: value,
