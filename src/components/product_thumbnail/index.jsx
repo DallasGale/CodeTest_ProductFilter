@@ -5,7 +5,6 @@ import styled from 'styled-components'
 
 import pxToRem from '../utils/px_to_rem'
 
-
 const Image = styled.img`
   display: block;
   width: 80%;

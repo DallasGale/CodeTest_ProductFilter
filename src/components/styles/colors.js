@@ -1,6 +1,5 @@
 export const black = '#000'
 export const blueLight = '#def1f4'
-export const grayLight = '#f1f1f1'
 export const grayMedium = '#e5e5e5'
 export const green = '#009900'
 export const red = '#cc3333'

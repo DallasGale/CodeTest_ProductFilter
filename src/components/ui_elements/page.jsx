@@ -9,7 +9,6 @@ import { ScreenTabletLandscapeDown, ScreenSmallDeviceDown } from '../utils/media
 
 import ContentWrapper from '../styled/content_wrapper'
 
-
 const StyledPage = styled.main`
   opacity: 0;
   background: 'transparent';

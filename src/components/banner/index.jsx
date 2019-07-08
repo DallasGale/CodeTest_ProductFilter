@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import styled from 'styled-components'
 
 import { green, red, white } from '../styles/colors'
@@ -8,7 +10,6 @@ import {
   exclusiveLabel,
   saleLabel,
 } from '../constants'
-
 
 const StyledBanner = styled.div`
   color: ${white};
@@ -35,6 +36,16 @@ const Banner = (props) => {
   if (isExclusive) return <ExclusiveBanner />
   if (isSale) return <SaleBanner />
   return null
+}
+
+Banner.propTypes = {
+  isSale: PropTypes.bool,
+  isExclusive: PropTypes.bool,
+}
+
+Banner.defaultProps = {
+  isSale: false,
+  isExclusive: false,
 }
 
 export default Banner
