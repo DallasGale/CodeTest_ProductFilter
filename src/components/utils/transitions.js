@@ -1,12 +1,5 @@
 import { keyframes } from 'styled-components'
 
-export const transitionPt1 = `
-  transition: all 0.1s ease-in-out;
-`
-export const transitionPt2 = `
-  transition: all 0.2s ease-in-out;
-`
-
 export const pageLoadContentAppear = keyframes`
   0% {
     opacity: 0;

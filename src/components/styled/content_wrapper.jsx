@@ -13,7 +13,7 @@ const StyledContent = styled.div`
   width: 100%;
 
   @media ${ScreenSmallDeviceDown} {
-    padding-top: ${pxToRem(100)};
+    padding-top: ${pxToRem(20)};
   }
 `
 
