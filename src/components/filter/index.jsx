@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-// Re-usable filter component
+// This is a generic re-usable filter component.
 
 const Filter = (props) => {
   const {

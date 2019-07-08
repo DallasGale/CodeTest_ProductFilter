@@ -3,34 +3,18 @@ import axios from 'axios'
 
 import styled from 'styled-components'
 
-import Filter from '../filter'
+import Topbar from '../topbar'
 import ProductTile from '../product_tile'
-
-import { blueLight } from '../styles/colors'
-
-import { TypographyHeadingOne } from '../styled/typography'
 
 import { pageLoadContentAppear } from '../utils/transitions'
 
 import {
+  productApi,
+  productCategory,
   productSizeFilterLabel,
   productSizes,
-  productApi,
 } from '../constants'
-import pxToRem from '../utils/px_to_rem'
 import { ScreenTabletDown, ScreenPhoneDown } from '../utils/media'
-
-const StyledTopBar = styled.div`
-  background: ${blueLight};
-  display: grid;
-  grid-template-columns: 50% 50%;
-  padding: ${pxToRem(10)};
-  margin-bottom: ${pxToRem(5)};
-`
-
-const StyledTopBarFilter = styled.div`
-  text-align: right;
-`
 
 const StyledProductGrid = styled.div`
   display: grid;
@@ -48,13 +32,10 @@ const StyledProductGrid = styled.div`
 `
 
 class Products extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      filteredValue: '',
-      allProducts: [],
-      filteredProducts: [],
-    }
+  state = {
+    filterSelected: '',
+    allProducts: [],
+    filteredProducts: [],
   }
 
 
@@ -83,7 +64,7 @@ class Products extends React.Component {
     if (filteredList) {
       this.setState({
         filteredProducts: filteredList,
-        filteredValue: value,
+        filterSelected: value,
       })
     }
 
@@ -92,27 +73,23 @@ class Products extends React.Component {
     if (e.target.value === productSizeFilterLabel) {
       this.setState({
         filteredProducts: allProducts,
-        filteredValue: value,
+        filterSelected: value,
       })
     }
   }
 
 
   render() {
-    const { filteredProducts, filteredValue } = this.state
+    const { filteredProducts, filterSelected } = this.state
     return (
       <section>
-        <StyledTopBar>
-          <TypographyHeadingOne>Women's Tops</TypographyHeadingOne>
-          <StyledTopBarFilter>
-            <Filter
-              filters={productSizes}
-              label={productSizeFilterLabel}
-              onChange={this.handleFilterChange}
-              value={filteredValue}
-            />
-          </StyledTopBarFilter>
-        </StyledTopBar>
+        <Topbar
+          category={productCategory}
+          filters={productSizes}
+          label={productSizeFilterLabel}
+          onChange={this.handleFilterChange}
+          value={filterSelected}
+        />
         <StyledProductGrid>
           {
             filteredProducts.map((product) => {
@@ -124,7 +101,6 @@ class Products extends React.Component {
                 size,
                 price,
               } = product
-              console.log(isExclusive, isSale)
               return (
                 <ProductTile
                   isExclusive={isExclusive}

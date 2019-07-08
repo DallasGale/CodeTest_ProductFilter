@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-
 import pxToRem from '../utils/px_to_rem'
 
 export const TypographyHeadingOne = styled.h1`

@@ -1,17 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
 import styled from 'styled-components'
 
 import { green, red, white } from '../styles/colors'
 import pxToRem from '../utils/px_to_rem'
 
-import {
-  exclusiveLabel,
-  saleLabel,
-} from '../constants'
+import { exclusiveLabel, saleLabel } from '../constants'
 
 const StyledBanner = styled.div`
+  background: ${props => props.background};
   color: ${white};
   display: inline-block;
   font-size: ${pxToRem(8)};
@@ -20,21 +17,10 @@ const StyledBanner = styled.div`
   width: auto;
 `
 
-const StyledExclusive = styled(StyledBanner)`
-  background: ${green};
-
-`
-const StyledSale = styled(StyledBanner)`
-  background: ${red};
-`
-
-const ExclusiveBanner = () => <StyledExclusive>{exclusiveLabel}</StyledExclusive>
-const SaleBanner = () => <StyledSale>{saleLabel}</StyledSale>
-
 const Banner = (props) => {
   const { isExclusive, isSale } = props
-  if (isExclusive) return <ExclusiveBanner />
-  if (isSale) return <SaleBanner />
+  if (isExclusive) return <StyledBanner background={green}>{exclusiveLabel}</StyledBanner>
+  if (isSale) return <StyledBanner background={red}>{saleLabel}</StyledBanner>
   return null
 }
 

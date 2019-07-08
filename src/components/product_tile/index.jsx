@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
-
 import styled from 'styled-components'
 
 import * as colors from '../styles/colors'
 import { TypographyHeadingTwo, TypographyHeadingThree } from '../styled/typography'
+import pxToRem from '../utils/px_to_rem'
 
 import { productImagePlaceholder } from '../constants'
-import pxToRem from '../utils/px_to_rem'
 
 import ProductThumbnail from '../product_thumbnail'
 import Banner from '../banner'
@@ -34,8 +33,9 @@ const StyledPrice = styled(TypographyHeadingThree)`
   text-align: right;
 `
 const ProductTile = (props) => {
-  // Below hooks are for css transition purposes when the
-  // product visibilty is on/off due to filtering.
+  // The below hooks are for css transition purposes when the
+  // products are either visibile or not due to the filter.
+
   const [visible, setVisibile] = useState(false)
   useEffect(() => {
     setVisibile(true)
